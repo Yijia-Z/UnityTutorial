@@ -16,9 +16,12 @@ public class Resetter : MonoBehaviour
         
     }
 
-    //Grabs colliders for this object, and tells when another collider hits it
     void OnCollisionEnter(Collision collision)
     {
+        //ContactPoint contact = collision.contacts[0];
+        //Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        //Vector3 position = contact.point;
+        //Instantiate(explosionPrefab, position, rotation);
         GameObject obj = collision.gameObject;
         if (obj.tag == "Player")
             obj.transform.position = new Vector3(0, 2, 0);
