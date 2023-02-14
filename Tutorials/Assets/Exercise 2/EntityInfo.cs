@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class EntityInfo : MonoBehaviour
 {
-    public bool grabbed;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    public bool selected=false;
+    public TMP_Text entityHealth;
+    public TMP_Text entityName;
+    public Material originMaterial , selectedMaterial;
     // Update is called once per frame
     void Update()
     {
-        if (grabbed)
+        if (selected)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                transform.position = hit.point;
-            }
+            
         }
     }
 
@@ -35,16 +30,11 @@ public class EntityInfo : MonoBehaviour
             Debug.Log(go.name);
             if (go == gameObject)
             {
-                grabbed = true;
-                GetComponent<Collider>().enabled = false;
+                selected = true;
+                entityHealth=GameObject.GetComponent<Health>().ToString;
+                return;
             }
-
         }
-    }
-
-    public void OnMouseUp()
-    {
-        grabbed = false;
-        GetComponent<Collider>().enabled = true;
+        selected=false;
     }
 }
