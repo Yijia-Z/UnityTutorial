@@ -14,11 +14,11 @@ public class Simulation : MonoBehaviour
     {
         if (timer >= 5 && timer < 15)
         {
-            icon.color = new Color32(255, 255, 225, 225);
+            icon.color = new Color32(255, 150, 35, 200);
         }
         else if (timer >= 15 || timer < 5)
         {
-            icon.color = new Color32(0, 0, 0, 225);
+            icon.color = new Color32(0, 0, 0, 200);
             if (timer > 20)
             {
                 dayText += 1;
