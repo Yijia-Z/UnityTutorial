@@ -18,7 +18,7 @@ public class DayNightController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 10)
+        if (timer > 10)
         {
             entities = GameObject.FindObjectsOfType<Entity>();
             foreach (Entity e in entities)
@@ -27,6 +27,6 @@ public class DayNightController : MonoBehaviour
             }
             timer = 0;
         }
-        sun.transform.Rotate(new Vector3((360 / 20.0f)*Time.deltaTime, 0, 0));
+        sun.transform.Rotate(new Vector3((360 / 20.0f) * Time.deltaTime, 0, 0));
     }
 }
