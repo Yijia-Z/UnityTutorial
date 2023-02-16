@@ -56,7 +56,7 @@ public class Zombie : Entity
                 }
 
                 doOnce = true;
-                Debug.Log("Found target" + Target.gameObject.name);
+                //Debug.Log("Found target" + Target.gameObject.name);
             }
 
             
@@ -77,7 +77,7 @@ public class Zombie : Entity
     {
         GameObject g = collision.gameObject;
 
-        Debug.Log("I hit a " + g.name);
+        //Debug.Log("I hit a " + g.name);
         if (g.GetComponent<Entity>())
         {
             Entity e = g.GetComponent<Entity>();

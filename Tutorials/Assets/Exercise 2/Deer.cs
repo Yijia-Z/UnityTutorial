@@ -34,7 +34,7 @@ public class Deer : Entity
                 Target = trees[r];
             }
 
-            Debug.Log("Found target" + Target.gameObject.name);
+            //Debug.Log("Found target" + Target.gameObject.name);
             if (Target != null)
             {
                 nma.SetDestination(Target.transform.position);

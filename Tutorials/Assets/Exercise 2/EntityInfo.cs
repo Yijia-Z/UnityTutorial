@@ -7,17 +7,13 @@ public class EntityInfo : MonoBehaviour
 {
     public Text entityNameText;
     public Slider healthBarSlider;
-    public Color selectedColor = new Color32(255, 150, 35, 200);
+    public Color selectedColor = new Color32(255, 255, 255, 200);
 
     private Entity selectedEntity;
     public SelectionManager selectionManager;
-    private Color originalColor;
-
+    public Color originalColor;
     private void Start()
-    {
-        // Get the original color of the entity
-        originalColor = GetComponent<Renderer>().material.color;
-    }
+    {}
 
     private void Update()
     {
@@ -33,13 +29,19 @@ public class EntityInfo : MonoBehaviour
             // Select the new entity
             selectedEntity = newSelectedEntity;
             if (selectedEntity != null)
-            {
+            {   originalColor = selectedEntity.gameObject.GetComponent<Renderer>().material.color;
                 // Set the entity's name and health values
                 entityNameText.text = selectedEntity.name;
-                healthBarSlider.value = selectedEntity.Health;
+                healthBarSlider.maxValue = selectedEntity.MaxHealth;
+                Debug.Log(selectedEntity.name + selectedEntity.Health);
                 // Change the entity's color to show it's selected
-                selectedEntity.GetComponent<Renderer>().material.color = selectedColor;
+                selectedEntity.gameObject.GetComponent<Renderer>().material.color = selectedColor;
             }
+        }
+        if (selectedEntity != null){
+            healthBarSlider.value = selectedEntity.Health;
+        }else{
+            healthBarSlider.value=0;
         }
     }
 }

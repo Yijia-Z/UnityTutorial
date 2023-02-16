@@ -14,7 +14,7 @@ public class Human : Entity
         nma.speed = 6.0f;
         MaxHealth = 70;
         Health = MaxHealth;
-        Damage = 50;
+        Damage = 20;
         AttackSpeed = 2.0f;
     }
 
@@ -79,7 +79,7 @@ public class Human : Entity
                 doOnce = true;
             }
 
-            Debug.Log("Found target" + Target.gameObject.name);
+            //Debug.Log("Found target" + Target.gameObject.name);
             if(Target != null)
             {
                 nma.SetDestination(Target.gameObject.transform.position);
@@ -97,7 +97,7 @@ public class Human : Entity
     {
         GameObject g = collision.gameObject;
 
-        Debug.Log("I hit a " + g.name);
+        //Debug.Log("I hit a " + g.name);
         if (g.GetComponent<Entity>())
         {
             Entity e = g.GetComponent<Entity>();

@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 9217259191985898068}
   - component: {fileID: 9217259191985898069}
   - component: {fileID: 9217259191985898070}
-  - component: {fileID: 9217259191985898067}
-  - component: {fileID: 2679486134667203911}
-  - component: {fileID: 675874485067826948}
+  - component: {fileID: 4969422669461841424}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -100,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9217259191985898067
+--- !u!114 &4969422669461841424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,33 +120,3 @@ MonoBehaviour:
   hb_prefab: {fileID: 0}
   attackTimer: 0
   prefab: {fileID: 0}
---- !u!114 &2679486134667203911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217259191985898056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6175c60a2c21794f84d7c604f3cb6a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectableLayer:
-    serializedVersion: 2
-    m_Bits: 2147483647
---- !u!114 &675874485067826948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217259191985898056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56dfbbb16f70b714c855b68bdf883100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityNameText: {fileID: 0}
-  healthBarSlider: {fileID: 0}
-  selectedColor: {r: 1, g: 0.5882353, b: 0.13725491, a: 0.78431374}
