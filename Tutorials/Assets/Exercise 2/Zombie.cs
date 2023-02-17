@@ -14,8 +14,8 @@ public class Zombie : Entity
         nma.speed = 2.0f;
         MaxHealth = 50;
         Health = MaxHealth;
-        Damage = 30;
-        AttackSpeed = 2.0f;
+        Damage = 40;
+        AttackSpeed = 1.0f;
     }
 
     bool doOnce = false;
@@ -59,7 +59,7 @@ public class Zombie : Entity
                 //Debug.Log("Found target" + Target.gameObject.name);
             }
 
-            
+
             if (Target != null)
             {
                 nma.SetDestination(Target.gameObject.transform.position);

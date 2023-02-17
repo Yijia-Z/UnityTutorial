@@ -6,7 +6,7 @@ public class SelectionManager : MonoBehaviour
     public LayerMask selectableLayer;
 
     private Entity selectedEntity = null;
-    public SelectionManager(){}
+    public SelectionManager() { }
 
     private void Update()
     {

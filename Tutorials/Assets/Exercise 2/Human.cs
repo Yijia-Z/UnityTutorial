@@ -14,7 +14,7 @@ public class Human : Entity
         nma.speed = 6.0f;
         MaxHealth = 70;
         Health = MaxHealth;
-        Damage = 20;
+        Damage = 50;
         AttackSpeed = 2.0f;
     }
 
@@ -52,7 +52,7 @@ public class Human : Entity
                     }
                 }
                 //if not, and no zombies, do nothing
-                else if(zoms.Length == 0)
+                else if (zoms.Length == 0)
                 {
                     return;
                 }
@@ -61,7 +61,7 @@ public class Human : Entity
                 if (HuntDeer)
                 {
                     Target = deers[0];
-                    foreach(Deer d in deers)
+                    foreach (Deer d in deers)
                     {
                         if (Vector3.Distance(transform.position, d.gameObject.transform.position) < Vector3.Distance(transform.position, Target.gameObject.transform.position))
                             Target = d;
@@ -80,7 +80,7 @@ public class Human : Entity
             }
 
             //Debug.Log("Found target" + Target.gameObject.name);
-            if(Target != null)
+            if (Target != null)
             {
                 nma.SetDestination(Target.gameObject.transform.position);
             }

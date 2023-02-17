@@ -13,7 +13,7 @@ public class EntityInfo : MonoBehaviour
     public SelectionManager selectionManager;
     public Color originalColor;
     private void Start()
-    {}
+    { }
 
     private void Update()
     {
@@ -29,19 +29,21 @@ public class EntityInfo : MonoBehaviour
             // Select the new entity
             selectedEntity = newSelectedEntity;
             if (selectedEntity != null)
-            {   originalColor = selectedEntity.gameObject.GetComponent<Renderer>().material.color;
+            {
+                originalColor = selectedEntity.gameObject.GetComponent<Renderer>().material.color;
                 // Set the entity's name and health values
                 entityNameText.text = selectedEntity.name;
                 healthBarSlider.maxValue = selectedEntity.MaxHealth;
-                Debug.Log(selectedEntity.name + selectedEntity.Health);
+                // Debug.Log(selectedEntity.name + selectedEntity.Health);
                 // Change the entity's color to show it's selected
                 selectedEntity.gameObject.GetComponent<Renderer>().material.color = selectedColor;
             }
         }
-        if (selectedEntity != null){
-            healthBarSlider.value = selectedEntity.Health;
-        }else{
-            healthBarSlider.value=0;
+        if (selectedEntity == null)
+        {
+            entityNameText.text = "Unselected";
+            healthBarSlider.value = 0;
         }
+        else { healthBarSlider.value = selectedEntity.Health; }
     }
 }
